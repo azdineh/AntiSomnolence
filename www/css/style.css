@@ -1,1 +1,30 @@
-/* Empty. Add your own CSS if you like */
+html,body{
+	height: 100%;
+	width: 100%;
+	background-color: #E9E9E9
+}
+
+.card-red div{
+   color: #FFFFFF !important;
+}
+.card-red .item{
+  background: #FF3E3C !important;
+
+}
+
+.card-gray .item{
+  background: #f7f7f7;
+}
+
+.card-blue .item{
+  background: #4E5AFF;
+}
+
+.card-green .item{
+  background: #4EAF4E;
+}
+
+
+
+/*http://stackoverflow.com/questions/30457776/ionicons-how-to-add-custom-icons*/
+/*http://fontawesome.io/examples*/
