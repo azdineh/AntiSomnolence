@@ -1,5 +1,25 @@
-<ion-view view-title="Casseur de monotonie">
-  <ion-content class="padding">
-    <p>MBreaker page</p>
-  </ion-content>
+<ion-view view-title="Casseur de monotonie sonore" class="padding" Casseur de monotonie>
+  <ion-content scroll="false">
+    <ion-slides options="slidesOptions" slider="data.slider" style="background:url('img/background.png') right bottom">
+<ion-slide-page>
+  <table class="anti-somnolence-table">
+    <tr>
+      <td>
+            <p> La durée avant le début </p><br/>{{ timerMinut }}----{{timerSecond}}
+            {{currentSS}}
+      </td>
+    </tr>
+  </table>
+</ion-slide-page>
+<ion-slide-page>
+  <table class="anti-somnolence-table">
+    <tr>
+      <td>
+        Anti-somnolence
+      </td>
+    </tr>
+  </table>
+</ion-slide-page>
+</ion-slides>
+</ion-content>
 </ion-view>
