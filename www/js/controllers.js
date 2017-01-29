@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
     //});
     //$scope.chat = Chats.get($stateParams.chatId);
   })
-  .controller('MbreakerCtrl', function ($scope, $rootScope, $interval,smbreaker) {
+  .controller('MbreakerCtrl', function ($scope, $rootScope, $interval, smbreaker) {
 
     $scope.slidesOptions = {
       loop: false,
@@ -17,9 +17,10 @@ angular.module('starter.controllers', [])
       pagination: false
     };
 
-    $rootScope.waitedDelay = 1*1000*60; //tow minuts
-    $rootScope.frequencePulse = 0.5*1000*60; // time between excitations
+    $rootScope.waitedDelay = 1 * 1000 * 60; //tow minuts
+    $rootScope.frequencePulse = 0.5 * 1000 * 60; // time between excitations
     $rootScope.enableAdvice = false;
+    
     $scope.currentSS = "";
     $scope.timerSecond = 59;
     $scope.timerMinut = $rootScope.waitedDelay / 60000;
@@ -36,24 +37,30 @@ angular.module('starter.controllers', [])
       }
 
     }, 1000, count);*/
-    $scope.d=Date.now();
+    if (ionic.Platform.isWebView() === true) {
+        $scope.d = Date.now();
 
-    var bootfunc=$interval(function(){
-      $scope.d0=Date.now();
-    },1000);
+        var bootfunc = $interval(function () {
+          $scope.d0 = Date.now();
+        }, 1000);
 
-    $scope.$watch('d0',function(d1){
-      console.log("now :"+d1);
-      if(Math.abs(d1-(Math.abs($scope.d)+Math.abs($rootScope.waitedDelay)))<500){
-        console.log("Start breaking now..");
-        smbreaker.startSoundMonotonyBreaking($rootScope.waitedDelay,$rootScope.frequencePulse,$rootScope.enableAdvice,$scope);
-        $interval.cancel(bootfunc);
-      }
-    },true);
+        //cordova.plugins.backgroundMode.enable();
+        //cordova.plugins.backgroundMode.onactivate=function(){};
+        $scope.$watch('d0', function (d1) {
+          console.log("now :" + d1);
+          if (Math.abs(d1 - (Math.abs($scope.d) + Math.abs($rootScope.waitedDelay))) < 500) {
+            console.log("Start breaking now..");
+            smbreaker.startSoundMonotonyBreaking($rootScope.waitedDelay, $rootScope.frequencePulse, $rootScope.enableAdvice, $scope);
+            $interval.cancel(bootfunc);
+          }
+        }, true);
 
-    $scope.$on('$destroy', function () {
-      smbreaker.stopBreaking();
-    });
+        $scope.$on('$destroy', function () {
+          smbreaker.stopBreaking();
+        });
+
+    }
+
 
 
 
