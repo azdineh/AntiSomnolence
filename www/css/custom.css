@@ -12,5 +12,26 @@ width: 100%;
 .anti-somnolence-table td{
   text-align: center;
   vertical-align: middle;
-  font-size: 40px;
+  font-size: 14px;
+ /* border:1px solid red*/
+}
+
+.settings-container{
+  padding-top: 0px;
+}
+
+.settings-container-disabled{
+  padding-top: 0px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.settings-container-item{
+  border-bottom: 12px solid;
+  border-color:darkgray  ;
+  padding: auto;
+}
+
+.settings-container-item>div{
+  padding: 20px;
 }

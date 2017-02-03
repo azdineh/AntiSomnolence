@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova','ngStorage'])
 
 .run(function($ionicPlatform) {
  
@@ -31,6 +31,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 
    //put the pan in yhe bottom even for android devices
    $ionicConfigProvider.tabs.position('bottom');
+   $ionicConfigProvider.navBar.alignTitle('center');
    
 
   // Ionic uses AngularUI Router which uses the concept of states

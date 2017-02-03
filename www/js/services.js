@@ -48,6 +48,7 @@ angular.module('starter.services', [])
 
     /**
      * @param SSobject 
+     * @param scope
      */
     var playSS = function (SSobject, scope) {
       var path = "sound/SS/";
@@ -72,6 +73,44 @@ angular.module('starter.services', [])
           console.log('Error ' + error + ' while preloading this sound ' + SSobject.name + '.mp3');
         });
     };
+
+    /**
+     * @param begin_hour nulber as  '3' or '14'
+     * @param end_hour number as '2' or '6'
+     */
+    vm.readAdviceInTime = function (begin_hour, end_hour, scope) {
+      var begin_unix_time;
+      var end_unix_time;
+
+      var datenow = new Date();
+      datenow.setHours(begin_hour);
+      begin_unix_time = datenow.getTime();
+      datenow.setHours(end_hour);
+      end_unix_time = datenow.getTime();
+
+      //console.log("End - Begin = "+(end_unix_time-begin_unix_time)/(1000*60*60));
+      begin_unix_time = Date.now() + (1000 * 6);
+      end_unix_time = begin_unix_time + (1000 * 14);
+
+      var adviceInTimeTaske;
+      scope.$watch('current_unix_time', function (recent_unix_time) {
+        var d_begin = Math.abs(begin_unix_time) - Math.abs(recent_unix_time);
+        var d_end = Math.abs(end_unix_time) - Math.abs(recent_unix_time);
+
+        if (Math.abs(d_begin) < 500) {
+          console.log("Begin advice in time");
+          adviceInTimeTaske = $interval(function () {
+            // read an advice sound
+            console.log("read advice sound");
+          }, 2000); // each 7 minuts
+        }
+        if (Math.abs(d_end) < 500) {
+          console.log("End advice reding time");
+          $interval.cancel(adviceInTimeTaske);
+        }
+      });
+    };
+
 
     var i = 0;
     var startingPromise;

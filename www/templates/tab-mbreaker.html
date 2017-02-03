@@ -1,24 +1,74 @@
-<ion-view view-title="Casseur de monotonie sonore" class="padding" Casseur de monotonie>
+<ion-view view-title="المرافقة الصوتية" class="padding">
   <ion-content scroll="false">
-    <ion-slides options="slidesOptions" slider="data.slider" style="background:url('img/background.png') right bottom">
+    <ion-slides options="slidesOptions" slider="data.slider" style="background:url('img/background.png') center 750px;padding: 20px">
 <ion-slide-page>
   <table class="anti-somnolence-table">
     <tr>
-      <td>
-            <p> La durée avant le début </p><br/>{{ timerMinut }}----{{timerSecond}}
-            {{currentSS}}
-      </td>
-    </tr>
-  </table>
+      <td style="text-align: right;padding-right: 12px;"><span dir="rtl" style="font-size: 12px">تأكد أن تشغل التطبيق وتدع الهاتف جانبا، قبل تشغبل محرك السيارة.</span>
+</td>
+<td style="width:10%;text-align: left"><img src="img/fi1.png" /></td>
+</tr>
+<tr>
+  <td colspan="2">
+    <button class="button button-outline button-positive" style="border: none" >
+<div style="padding: 20px;text-align: center" >
+<i class="icoo ion-ah-sound-advice" style="font-size: 750%"></i>
+<p style="font-size: 0.7em;font-weight: bold;line-height:18px;width:200px;padding-top: 10px"> إضغط على الرمز لتطلق عملبة <br/>المرافقة الصوتية
+</p>
+</div>
+</button>
+</td>
+</tr>
+<tr>
+  <td colspan="2" dir="rtl" style="text-align: justify">
+<span dir="rtl">سيساعدك التطبيق على تجنب مقدمات الغفوة أثناء السياقة لمدة طويلة.
+      إذا كنت تسافر بمفردك في السيارة فنسبة احتمال استسلامك للنوم أمام المقود تزيد بشكل خطير.
+       سيرافقك الهاتف صوتيا، و سينعش دماغك بتهييجات صوتية قصيرة بين الحين و الآخر.
+        كما سيذكرك التطبيق (بشكل اختياري) بنصائح صوتية ذكية تتلائم مع الفترة الزمنية التي تستغرقها الرحلة.
+       </span>
+<span style="color: red" >انتبه للنصيحة أعلاه</span>
+
+
+</td>
+</tr>
+</table>
 </ion-slide-page>
 <ion-slide-page>
   <table class="anti-somnolence-table">
     <tr>
-      <td>
-        Anti-somnolence
-      </td>
-    </tr>
-  </table>
+      <td colspan="2" style="text-align: center;height: 60px;padding-top: 12px">
+<span dir="rtl" style="font-size: 36px;">01:22:30</span>
+<div style="font-size: 0.8em">المرافقة الصوتية في طور الإشتغال</div>
+
+</td>
+</tr>
+<tr>
+  <td colspan="2" style="height: 60px">
+<div ng-hide="ishiden">
+  <i class="icon ion-android-radio-button-on" style="font-size: 3em"></i>
+</div>
+</td>
+</tr>
+<tr>
+  <td colspan="2" style="text-align: center;height: 40%">
+<img src="img/fi2.png" style="height: 30%" />
+<div dir="rtl">
+  ، كن حكيما، واجب الوقت يحتم على اليدين أن تكونا الآن على المقود.
+
+
+</div>
+</td>
+</tr>
+<tr>
+  <td style="text-align: left;vertical-align: bottom;width:10%">
+    <button class="button button-large button-assertive">إيقاف</button></td>
+<td dir="rtl" style="text-align: right;vertical-align: top;padding-top: 10px">
+<ol dir="rtl">
+  <il>النهييج الصوتي الأول بعد 7 دقائق</il>
+</ol>
+</td>
+</tr>
+</table>
 </ion-slide-page>
 </ion-slides>
 </ion-content>
